@@ -8,7 +8,7 @@ function UsersTableHeading() {
     <UsersTableHeadingBlock>
       <Div className="text">user list</Div>
       <Link to="/new-user">
-        <Button pealAnimation large text="Add New" bgColor="blue" />
+        <Button peelAnimation large text="Add New" bgColor="blue" />
       </Link>
     </UsersTableHeadingBlock>
   );

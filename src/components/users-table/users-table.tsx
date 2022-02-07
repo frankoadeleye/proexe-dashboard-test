@@ -49,7 +49,7 @@ function UsersTable() {
               <div>No Users In This Dashboard</div>
               <br />
               <Link to="/new-user">
-                <Button pealAnimation large text="Add New" bgColor="blue" />
+                <Button peelAnimation large text="Add New" bgColor="blue" />
               </Link>
               <br />
             </NoUsersBlock>

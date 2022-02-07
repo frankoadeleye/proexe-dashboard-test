@@ -7,7 +7,7 @@ interface cProps {
   large?: boolean;
   roundBorder?: any;
   bgColor?: string;
-  pealAnimation?: any;
+  peelAnimation?: any;
 }
 
 export const ButtonBlock = styled.button<cProps>`
@@ -60,7 +60,7 @@ export const ButtonBlock = styled.button<cProps>`
   `};
 
   ${(props) =>
-    props.pealAnimation &&
+    props.peelAnimation &&
     `
     display: -webkit-box;
    display: -webkit-flex;

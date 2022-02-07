@@ -1,25 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { DashboardHomepage, NewUser, NotFound } from "pages";
+import useErrorBoundary from "use-error-boundary";
+import { ThemeProvider } from "styled-components";
+import theme from "utils/constants/theme";
+import { Provider } from "react-redux";
+import { store } from "redux/store";
+import GlobalStyles from "utils/constants/global-styles";
+import MyRoutes from "routes";
 
 function App() {
+  const { ErrorBoundary, didCatch, error } = useErrorBoundary();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {didCatch ? (
+        <h4>An error has been caught: {error.message}</h4>
+      ) : (
+        <ErrorBoundary>
+          <ThemeProvider theme={theme}>
+            <Provider store={store}>
+              <GlobalStyles />
+              <MyRoutes />
+            </Provider>
+          </ThemeProvider>
+        </ErrorBoundary>
+      )}
+    </>
   );
 }
 

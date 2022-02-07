@@ -20,5 +20,4 @@ export const ContentLayout = styled.div`
   min-height: 30vh;
   flex-direction: column;
   position: relative;
-  border: 1px solid #ccc;
 `;

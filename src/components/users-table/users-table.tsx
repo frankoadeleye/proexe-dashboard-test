@@ -42,18 +42,24 @@ function UsersTable() {
       let UsersData = store.getState().Users.response;
       if (UsersData.length === 0) {
         return (
-          <NoUsersBlock>
-            <div>No Users In This Dashboard</div>
-            <br />
-            <Link to="/new-user">
-              <Button medium text="Create One" bgColor="green" />
-            </Link>
-            <br />
-          </NoUsersBlock>
+          <>
+            <UsersTableHeading />
+            <Hr />
+            <NoUsersBlock>
+              <div>No Users In This Dashboard</div>
+              <br />
+              <Link to="/new-user">
+                <Button pealAnimation large text="Add New" bgColor="blue" />
+              </Link>
+              <br />
+            </NoUsersBlock>
+          </>
         );
       }
       return (
         <>
+          <UsersTableHeading />
+          <Hr />
           <UsersTableListBlock>
             <thead>
               <tr>
@@ -88,8 +94,6 @@ function UsersTable() {
         message={message}
         duration={2000}
       />
-      <UsersTableHeading />
-      <Hr />
       {UsersTableBody()}
       <Outlet />
     </ContentLayout>

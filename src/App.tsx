@@ -1,5 +1,3 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DashboardHomepage, NewUser, NotFound } from "pages";
 import useErrorBoundary from "use-error-boundary";
 import { ThemeProvider } from "styled-components";
 import theme from "utils/constants/theme";

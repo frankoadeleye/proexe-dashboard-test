@@ -1,13 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { DashboardHomepage, NewUser, NotFound, User } from "pages";
-import { useEffect } from "react";
+import { useLayoutEffect } from "react";
 import { GetUsersActions } from "redux/users";
 import { useDispatch } from "react-redux";
 
 function MyRoutes() {
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     dispatch(GetUsersActions.starts());
   }, [dispatch]);
 

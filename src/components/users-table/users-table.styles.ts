@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { FontSizeFor } from "utils/functions";
 import { PerfectlyCentered } from "utils/functions";
+import { mediaDevices } from "utils/functions";
 
 export const UsersTableHeadingBlock = styled.div`
-  width: 99%;
+  width: 96%;
   margin: 0px auto;
   height: 70px;
   display: flex;
@@ -13,6 +14,10 @@ export const UsersTableHeadingBlock = styled.div`
   .text {
     ${FontSizeFor.HeaderText};
   }
+
+  ${mediaDevices.tablet`
+    width: 98%;
+  `}
 `;
 
 export const UsersTableListBlock = styled.table`

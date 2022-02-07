@@ -1,8 +1,17 @@
 import { ButtonBlock } from "./button.styles";
 
-function Button({ medium, large, bgColor, text, onClick, ...otherProps }: any) {
+function Button({
+  pealAnimation,
+  medium,
+  large,
+  bgColor,
+  text,
+  onClick,
+  ...otherProps
+}: any) {
   return (
     <ButtonBlock
+      pealAnimation={pealAnimation}
       medium={medium}
       large={large}
       bgColor={bgColor}

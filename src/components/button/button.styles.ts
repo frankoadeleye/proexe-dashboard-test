@@ -7,6 +7,7 @@ interface cProps {
   large?: boolean;
   roundBorder?: any;
   bgColor?: string;
+  pealAnimation?: any;
 }
 
 export const ButtonBlock = styled.button<cProps>`
@@ -57,4 +58,30 @@ export const ButtonBlock = styled.button<cProps>`
       height: 40px;
      }
   `};
+
+  ${(props) =>
+    props.pealAnimation &&
+    `
+    display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+
+  background-position: 100%;
+  background-size: 400%;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-position: 0;
+  }
+
+  transition: 300ms ease-in-out;
+  background-color: #318ce7;
+  border-color: transparent;
+  background-image: linear-gradient(45deg, teal 50%, transparent 50%);
+  background-image: -webkit-linear-gradient(45deg, teal 50%, transparent 50%);
+   `}
 `;

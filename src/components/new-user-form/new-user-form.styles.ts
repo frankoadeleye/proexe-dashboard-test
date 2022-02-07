@@ -31,7 +31,7 @@ export const NewUserFormHeaderBlock = styled.div`
   }
 
   ${mediaDevices.tablet`
-    width: 99%;
+    width: 98%;
   `}
 `;
 
@@ -42,9 +42,15 @@ export const NewUserFormButtonsWrap = styled.div`
   justify-content: flex-end;
 
   .button-cover {
-    width: 300px;
+    width: 200px;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
   }
+
+  ${mediaDevices.laptop`
+    .button-cover {
+      width: 300px;
+    }
+  `}
 `;

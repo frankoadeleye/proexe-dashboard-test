@@ -56,7 +56,7 @@ function UserTableRow({ data }: uProps) {
         <td aria-label="City">{address.city}</td>
         <td aria-label="Edit">
           <Link to={`/user/${id}`}>
-            <Button medium className="button" text="Edit" bgColor="orange" />
+            <Button medium className="button" text="Edit" bgColor="#e5aa70" />
           </Link>
         </td>
         <td aria-label="Delete">
@@ -65,7 +65,7 @@ function UserTableRow({ data }: uProps) {
             className="button"
             medium
             text="Delete"
-            bgColor="red"
+            bgColor="#8b0000"
           />
         </td>
       </tr>
@@ -88,14 +88,14 @@ function UserTableRow({ data }: uProps) {
             className="button"
             onClick={handleClose}
             text="Cancel"
-            bgColor="orange"
+            bgColor="#8a7f80"
           />
           <Button
             onClick={() => handleDelete(id)}
             className="button"
             medium
             text="Delete"
-            bgColor="red"
+            bgColor="#8b0000"
           />
         </DialogActions>
         <br />

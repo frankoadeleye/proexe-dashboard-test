@@ -236,9 +236,14 @@ function NewUserForm() {
 
         <NewUserFormButtonsWrap>
           <Div className="button-cover">
-            <Button medium text="Submit" bgColor="green" type="submit" />
+            <Button medium text="Submit" bgColor="#2e8b57" type="submit" />
             <Link to="/">
-              <Button medium text="cancel" bgColor="red" onClick={clearData} />
+              <Button
+                medium
+                text="cancel"
+                bgColor="#8b0000"
+                onClick={clearData}
+              />
             </Link>
           </Div>
         </NewUserFormButtonsWrap>

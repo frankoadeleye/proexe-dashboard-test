@@ -202,7 +202,7 @@ function User() {
           message={message}
           duration={2000}
         />
-        <NewUserFormHeader />
+        <NewUserFormHeader text="Edit User" />
         <Hr />
         <NewUserFormSection onSubmit={handleSubmit}>
           <FormInput
@@ -252,12 +252,12 @@ function User() {
 
           <NewUserFormButtonsWrap>
             <Div className="button-cover">
-              <Button medium text="Submit" bgColor="green" type="submit" />
+              <Button medium text="Submit" bgColor="#2e8b57" type="submit" />
               <Link to="/">
                 <Button
                   medium
                   text="cancel"
-                  bgColor="red"
+                  bgColor="#8b0000"
                   onClick={clearData}
                 />
               </Link>

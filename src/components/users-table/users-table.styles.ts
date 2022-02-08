@@ -137,7 +137,6 @@ export const NoUsersFoundBlock = styled.div`
   margin: auto;
   flex-direction: column;
   width: 100%;
-  border: 2px solid red;
   position: absolute;
   text-align: center;
 `;

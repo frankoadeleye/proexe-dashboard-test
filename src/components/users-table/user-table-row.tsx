@@ -55,7 +55,7 @@ function UserTableRow({ data }: uProps) {
         <td aria-label="Email">{email}</td>
         <td aria-label="City">{address.city}</td>
         <td aria-label="Edit">
-          <Link to={`/user/${id}`}>
+          <Link to={`/user/${email}`}>
             <Button medium className="button" text="Edit" bgColor="#e5aa70" />
           </Link>
         </td>

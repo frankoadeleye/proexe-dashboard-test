@@ -23,7 +23,7 @@ import { EditUser } from "redux/users";
 function User() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const { id } = useParams();
+  const { email } = useParams();
 
   interface RootState {
     Users: any;
@@ -50,7 +50,7 @@ function User() {
     if (isGotUsers) {
       const users = store.getState().Users.response;
 
-      let user = users.find((p: any) => p.id === Number(id));
+      let user = users.find((p: any) => p.email === String(email));
 
       setFields({
         id: user.id,
@@ -60,7 +60,7 @@ function User() {
         username: user.username,
       });
     }
-  }, [isGotUsers, setFields, id]);
+  }, [isGotUsers, setFields, email]);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;

@@ -1,6 +1,14 @@
 import { GET_USERS, CREATE_USER, REMOVE_USER, EDIT_USER } from "redux/users";
 
-const initialState = {
+interface initProps {
+  isGettingUsers: boolean;
+  isGotUsers: boolean;
+  isFailedToGetUsers: boolean;
+  isRemovedUser: boolean;
+  response: any;
+}
+
+const initialState: initProps = {
   isGettingUsers: false,
   isGotUsers: false,
   isFailedToGetUsers: false,
@@ -50,7 +58,7 @@ export function UsersReducer(state = initialState, action: any) {
         response: [
           ...state.response,
           {
-            id: state.response.length + 1,
+            id: Math.floor(Math.random() * 1000),
             email: action.email,
             name: action.name,
             address: {
@@ -83,7 +91,7 @@ export function UsersReducer(state = initialState, action: any) {
         isRemovedUser: false,
         isFailedToGetUsers: false,
         response: state.response.map((content: any) =>
-          content.id === action.id
+          content.email === action.email
             ? {
                 ...content,
                 email: action.email,

@@ -129,3 +129,15 @@ export const NoUsersBlock = styled.div`
   margin: auto;
   flex-direction: column;
 `;
+
+export const NoUsersFoundBlock = styled.div`
+  width: 100%;
+  text-align: center;
+  ${PerfectlyCentered};
+  margin: auto;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid red;
+  position: absolute;
+  text-align: center;
+`;

@@ -91,7 +91,7 @@ export function UsersReducer(state = initialState, action: any) {
         isRemovedUser: false,
         isFailedToGetUsers: false,
         response: state.response.map((content: any) =>
-          content.email === action.email
+          content.id === action.id
             ? {
                 ...content,
                 email: action.email,

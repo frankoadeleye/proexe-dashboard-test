@@ -17,7 +17,7 @@ function MyRoutes() {
         <Routes>
           <Route path="/" element={<DashboardHomepage />} />
           <Route path="/new-user" element={<NewUser />} />
-          <Route path="/user/:email" element={<User />} />
+          <Route path="/user/:id" element={<User />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

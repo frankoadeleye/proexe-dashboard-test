@@ -23,13 +23,15 @@ import { EditUser } from "redux/users";
 function User() {
   const dispatch = useDispatch();
   let navigate = useNavigate();
-  const { email } = useParams();
+  const { id } = useParams();
 
-  interface RootState {
-    Users: any;
-  }
+  useEffect(() => {
+    console.log(store.getState());
+  }, []);
 
-  const isGotUsers = useSelector((state: RootState) => state.Users.isGotUsers);
+  const users = store.getState().Users.response;
+
+  let user = users.find((p: any) => p.id === Number(id));
 
   const [hasError, setError] = useState({
     email: false,
@@ -39,28 +41,11 @@ function User() {
   });
 
   const [fields, setFields] = useState({
-    id: "",
-    email: "",
-    name: "",
-    address: "",
-    username: "",
+    email: user.email,
+    name: user.name,
+    address: user.address.city,
+    username: user.username,
   });
-
-  useEffect(() => {
-    if (isGotUsers) {
-      const users = store.getState().Users.response;
-
-      let user = users.find((p: any) => p.email === String(email));
-
-      setFields({
-        id: user.id,
-        email: user.email,
-        name: user.name,
-        address: user.address.city,
-        username: user.username,
-      });
-    }
-  }, [isGotUsers, setFields, email]);
 
   const handleChange = (e: any) => {
     const { name, value } = e.target;
@@ -171,7 +156,7 @@ function User() {
       let address = fields.address;
       let username = fields.username;
 
-      dispatch(EditUser(fields.id, name, email, address, username));
+      dispatch(EditUser(user.id, name, email, address, username));
       navigate("/", { replace: true });
       dispatch(AlertActions.success("User Edited Successfully"));
     }
@@ -179,7 +164,6 @@ function User() {
 
   const clearData = () => {
     setFields({
-      id: "",
       email: "",
       name: "",
       address: "",

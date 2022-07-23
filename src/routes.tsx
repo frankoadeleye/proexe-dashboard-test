@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { DashboardHomepage, NewUser, NotFound, User } from "pages";
+import { DashboardHomepage, NewUser, NotFound, User, Todo } from "pages";
 import { useLayoutEffect } from "react";
 import { GetUsersActions } from "redux/users";
 import { useDispatch } from "react-redux";
@@ -19,6 +19,7 @@ function MyRoutes() {
           <Route path="/new-user" element={<NewUser />} />
           <Route path="/user/:id" element={<User />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/todo" element={<Todo />} />
         </Routes>
       </BrowserRouter>
     </>

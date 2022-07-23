@@ -1,4 +1,5 @@
 import { GET_USERS, CREATE_USER, REMOVE_USER, EDIT_USER } from "redux/users";
+import { store } from "./../store";
 
 interface initProps {
   isGettingUsers: boolean;
